@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Login</title>
+<style>
+    /* General body styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9; /* Light Gray Background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Centered form container */
+    .container {
+        background-color: #ffffff; /* White */
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Input fields */
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #03A9F4; /* Light Blue Outline */
+        outline: none;
+        box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
+    }
+
+    /* Login button */
+    input[type="submit"] {
+        background-color: #FF9800; /* Orange */
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #fb8c00; /* Darker Orange */
+        transform: scale(1.05);
+    }
+
+    /* Links */
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: #03A9F4; /* Light Blue */
+        font-weight: bold;
+        margin-top: 10px;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #0277BD; /* Darker Blue */
+    }
+
+    a + a {
+        margin-left: 30px; /* Space between links */
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Login</h2>
+        <form action="customerlogin">
+            <input type="text" placeholder="Enter EmailId" name="emailid" required>
+            <br>
+            <input type="text" placeholder="Enter Password" name="password" required>
+            <br>
+            <input   type="submit" value="Login">
+        </form>
+        <div>
+            <a href="CustomerRegistration.html" target="_self">New Account</a>
+            <a href="UpdateMobileNumber.html" target="_self">Update Password</a>
+        </div>
+    </div>
+</body>
+</html>

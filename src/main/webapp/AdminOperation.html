@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Dashboard</title>
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f7f8; /* Light gray background */
+    }
+
+    /* Center Content */
+    center {
+        background: #ffffff;
+        padding: 40px 60px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    /* Buttons */
+    button, a {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 10px;
+    }
+
+    /* Green Button */
+    button {
+        background-color: #4CAF50; /* Light Green */
+        border: none;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+    /* Orange Button */
+    a.orange {
+        background-color: #FF9800; /* Light Orange */
+    }
+
+    a.orange:hover {
+        background-color: #fb8c00;
+        transform: scale(1.05);
+    }
+
+    /* Light Blue Button */
+    a.lightblue {
+        background-color: #03A9F4; /* Light Blue */
+    }
+
+    a.lightblue:hover {
+        background-color: #039BE5;
+        transform: scale(1.05);
+    }
+
+    /* Black Button */
+    a.black {
+        background-color: #333333; /* Black */
+    }
+
+    a.black:hover {
+        background-color: #1e1e1e;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+    <center>
+        <a href="AddProducts.html" target="_self" class="orange">
+            Add Product
+        </a>
+        <a href="AllProduct.jsp" target="_self" class="lightblue">
+            All Product Details
+        </a>
+    </center>
+</body>
+</html>

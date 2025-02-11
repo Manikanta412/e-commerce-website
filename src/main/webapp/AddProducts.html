@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product Details</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light Grayish Blue Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Form Container */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Input Fields and Select */
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #03A9F4; /* Light Blue Focus */
+            box-shadow: 0 0 5px rgba(3, 169, 244, 0.5);
+        }
+
+        /* Submit Button */
+        button {
+            background-color: #FF9800; /* Orange */
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #fb8c00; /* Darker Orange */
+            transform: scale(1.05);
+        }
+
+        /* Exit Button */
+        .exit-btn input[type="submit"] {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .exit-btn input[type="submit"]:hover {
+            background-color: #45a049; /* Darker Green */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Product Details</h2>
+        <form action="addProduct" method="POST">
+            <!-- Category Dropdown -->
+            <label for="category">Category</label>
+            <select id="category" onchange="updateBrands()" name="category" required>
+                <option value="" selected>SELECT</option>
+                <option value="phone">Phone</option>
+                <option value="laptop">Laptop</option>
+                <option value="tv">TV</option>
+            </select>
+            
+            <!-- Brand Dropdown -->
+            <label for="brand">Brand</label>
+            <select id="brand" name="brand" required>
+                <option value="" selected>SELECT</option>
+            </select>
+            
+            <!-- Input Fields -->
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Enter Product Name" name="name" required>
+            
+            <label for="productPrice">Price</label>
+            <input type="number" id="productPrice" placeholder="Enter Product Price" name="price" step="0.01" required>
+            
+            <label for="productQuantity">Quantity</label>
+            <input type="number" id="productQuantity" placeholder="Enter Product Quantity" name="quantity" required>
+            
+            <label for="discount">Discount (%)</label>
+            <input type="text" id="discount" placeholder="Enter Product Discount" name="discount" step="0.01" required>
+            
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+        <div class="exit-btn">
+            <form action="AdminOperation.html">
+                <input type="submit" value="Exit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to update brands based on category selection
+        function updateBrands() {
+            const category = document.getElementById("category").value;
+            const brandDropdown = document.getElementById("brand");
+
+            // Clear existing options
+            brandDropdown.innerHTML = '<option value="" selected>SELECT</option>';
+
+            let brands = [];
+
+            // Define brands for each category
+            if (category === "phone") {
+                brands = ["Samsung", "Apple", "OnePlus", "Xiaomi"];
+            } else if (category === "laptop") {
+                brands = ["Dell", "HP", "Lenovo", "Apple"];
+            } else if (category === "tv") {
+                brands = ["Sony", "Samsung", "LG", "Panasonic"];
+            }
+
+            // Ensure there are brands to populate
+            if (brands.length === 0) {
+                console.log("No brands for selected category");
+                return;
+            }
+
+            // Add new options to the brand dropdown
+            brands.forEach(brand => {
+                const option = document.createElement("option");
+                option.value = brand.toLowerCase();
+                option.textContent = brand;
+                brandDropdown.appendChild(option);
+            });
+        }
+    </script>
+</body>
+</html>

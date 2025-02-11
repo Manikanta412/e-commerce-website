@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeff3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background: linear-gradient(135deg, #ffffff, #d4e1f5);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        .payment-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .payment-option {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .payment-option:hover {
+            background: #e2e6ea;
+            border-color: #007BFF;
+        }
+        .payment-option input {
+            margin-right: 15px;
+        }
+        .action-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .action-button.enabled {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Select Payment Type</h2>
+        <label class="payment-option">
+            <input type="radio" name="payment" id="cod" value="Cash on Delivery">
+            Cash on Delivery
+        </label>
+        <label class="payment-option">
+            <input type="radio" name="payment" id="card" value="Card Payment">
+            Card Payment
+        </label>
+        <label class="payment-option">
+            <input type="radio" name="payment" id="upi" value="UPI">
+            UPI
+        </label>
+        <button class="action-button" id="actionButton" disabled>Select a Payment Method</button>
+    </div>
+
+    <script>
+        const paymentOptions = document.querySelectorAll('input[name="payment"]');
+        const actionButton = document.getElementById('actionButton');
+
+        paymentOptions.forEach(option => {
+            option.addEventListener('change', () => {
+                actionButton.disabled = false;
+                actionButton.classList.add('enabled');
+
+                if (option.id === 'cod') {
+                    actionButton.textContent = 'Confirm Order';
+                } else {
+                    actionButton.textContent = 'Pay';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

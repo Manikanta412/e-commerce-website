@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Registration</title>
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f5f9; /* Light Grayish Blue */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Form Container */
+    .container {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    /* Input Fields */
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+        transition: border 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #03A9F4; /* Light Blue border on focus */
+    }
+
+    input::placeholder {
+        color: #888;
+    }
+
+    /* Submit Button */
+    input[type="submit"] {
+        background-color: #FF9800; /* Light Orange */
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #fb8c00; /* Darker Orange */
+        transform: scale(1.05);
+    }
+
+    /* Login Link Styling */
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #03A9F4; /* Light Blue */
+        font-weight: bold;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+        color: #0277BD; /* Darker Blue */
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Registration</h1>
+        <form action="customerregistration" method="get">
+
+            <input type="text" placeholder="Enter Your Name" name="name" required>
+            <input type="text" placeholder="Enter Your Mobile Number" name="mobilenumber" required>
+            <input type="email" placeholder="Enter Your Email ID" name="emailid" required>
+            <input type="text" placeholder="Enter Your Gender" name="gender" required>
+            <input type="text" placeholder="Enter Your Address" name="address" required>
+            <input type="password" placeholder="Enter Your Password" name="password" required>
+            <input type="submit" value="Register">
+        </form>
+        <!-- Login Link -->
+        <a href="CustomerLogin.html" target="_self">Login</a>
+    </div>
+</body>
+</html>

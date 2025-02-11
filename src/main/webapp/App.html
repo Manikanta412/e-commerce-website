@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shopping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(0, 128, 192);
+            padding: 10px 20px;
+        }
+
+        nav .title {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Background Section */
+        .background {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(128, 128, 255); /* Replacing image with a color */
+            color: white;
+            height: 50vh;
+            padding: 20px;
+        }
+
+        .background h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .background p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .background a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .background a:hover {
+            background-color: #45a049;
+        }
+
+        /* Cards Section */
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="title">E_Shopping</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="CustomerRegistration.html">Signup</a></li>
+            <li><a href="CustomerLogin.html">Login</a></li>
+            <li><a href="#">Search</a></li>
+        </ul>
+    </nav>
+
+    <!-- Background Section -->
+    <div class="background">
+        <div>
+            <h1>Welcome to E-Shopping</h1>
+            <p>Happy Shopping!</p>
+            <a href="AllProductDetailsForCustomer.jsp">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Type: Electronics</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Type: Clothing</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Type: Accessories</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 E_Shopping. All rights reserved.</p>
+    </footer>
+</body>
+</html>

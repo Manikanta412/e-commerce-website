@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login</title>
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f5f9; /* Light Grayish Blue */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* Form Container */
+    .container {
+        background-color: #ffffff;
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    /* Input Fields */
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+        transition: border 0.3s ease;
+    }
+
+    input:focus {
+        border-color: #03A9F4; /* Light Blue border on focus */
+    }
+
+    input::placeholder {
+        color: #888;
+    }
+
+    /* Submit Button */
+    input[type="submit"] {
+        background-color: #FF9800; /* Light Orange */
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #fb8c00; /* Darker Orange */
+        transform: scale(1.05);
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Login</h1>
+        <form action="adminlogin">
+            <input type="email" placeholder="Enter EmailId" name="emailid" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
